@@ -99,7 +99,7 @@ input {
         z-index: 10;
         display: flex;
         align-items: center;
-        padding: 2.5rem 4vw;
+        padding: 1.8rem 4vw;
         width: 100%;
         background: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(12px);
@@ -180,9 +180,9 @@ input {
 
             .cartBadge {
                 position: absolute;
-                top: 0.3rem;
-                right: 0.3rem;
-                background: var(--leaf);
+                top: -0.5rem;
+                right: -0.5rem;
+                background: #C19738;
                 color: #fff;
                 font-size: 0.65rem;
                 padding: 0.1rem 0.35rem;
@@ -203,6 +203,11 @@ input {
         display: flex;
         flex-direction: column;
         gap: 4.5rem;
+    }
+
+    main > section + section {
+        border-top: 1px solid rgba(20, 22, 28, 0.08);
+        padding-top: 4rem;
     }
 
     .section-head {
@@ -365,11 +370,11 @@ input {
         }
 
         .product-media {
-            background: linear-gradient(160deg, rgba(47, 107, 60, 0.25), rgba(250, 249, 247, 0.95)), url(../../assets/Images/prod.jpeg);
+            background: linear-gradient(160deg, rgba(47, 107, 60, 0.25), rgba(250, 249, 247, 0.521)), url(../../assets/Images/prod.jpeg);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            height: 9rem;
+            height: 15rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -416,6 +421,15 @@ input {
     }
 
     .video-testimonials {
+        background: linear-gradient(140deg, rgba(27, 58, 75, 0.08), rgba(197, 155, 58, 0.08));
+        border: 1px solid rgba(20, 22, 28, 0.08);
+        border-radius: 1.6rem;
+        padding: 2.5rem;
+
+        .section-head {
+            align-items: center;
+        }
+
         .video-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -425,33 +439,54 @@ input {
 
         .video-card {
             position: relative;
-            background: #ffffff;
-            border-radius: 1.2rem;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 1.4rem;
             overflow: hidden;
-            border: 1px solid rgba(20, 22, 28, 0.08);
-            box-shadow: var(--shadow);
+            border: 1px solid rgba(20, 22, 28, 0.1);
+            box-shadow: 0 16px 40px rgba(20, 22, 28, 0.12);
+            transition: transform 0.3s, border 0.3s, box-shadow 0.3s;
+
+            &:hover {
+                transform: translateY(-4px);
+                border-color: rgba(197, 155, 58, 0.35);
+                box-shadow: 0 22px 48px rgba(20, 22, 28, 0.18);
+            }
 
             .video-thumb {
                 position: absolute;
                 inset: 0;
                 background-size: cover;
                 background-position: center;
-                filter: saturate(0.9);
+                filter: saturate(0.9) contrast(1.02);
                 transition: opacity 0.35s ease;
             }
 
             .video-play {
                 position: absolute;
                 inset: 0;
-                display: grid;
-                place-items: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
                 font-weight: 600;
                 letter-spacing: 0.2em;
                 text-transform: uppercase;
-                color: #fff;
                 text-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-                background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.35));
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
                 transition: opacity 0.35s ease;
+
+                span {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 3.2rem;
+                    height: 3.2rem;
+                    border-radius: 999px;
+                    border: 1px solid rgba(255, 255, 255, 0.5);
+                    background: rgba(255, 255, 255, 0.12);
+                    font-size: 0.7rem;
+                    letter-spacing: 0.25em;
+                }
             }
 
             iframe {
@@ -519,7 +554,7 @@ input {
 
         .why-image {
             .image-card {
-                background: linear-gradient(140deg, rgba(27, 58, 75, 0.2), rgba(250, 249, 247, 0.95)), url(../../assets/Images/why-buy.jpg);
+                background: linear-gradient(140deg, rgba(27, 58, 75, 0.2), rgba(250, 249, 247, 0.521)), url(../../assets/Images/why-buy.jpg);
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
@@ -590,11 +625,11 @@ input {
         }
 
         .recipe-media {
-            background: linear-gradient(160deg, rgba(47, 107, 60, 0.25), rgba(250, 249, 247, 0.95)), url(../../assets/Images/prod.jpeg);
+            background: linear-gradient(160deg, rgba(47, 107, 60, 0.25), rgba(250, 249, 247, 0.521)), url(../../assets/Images/prod.jpeg);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            height: 9rem;
+            height: 15rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -726,15 +761,61 @@ input {
 
         .socials {
             display: flex;
-            gap: 0.75rem;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.45rem 0.7rem;
+            border-radius: 999px;
+            width: fit-content;
+            border: 1px solid rgba(20, 22, 28, 0.12);
+            background: linear-gradient(120deg, rgba(27, 58, 75, 0.12), rgba(197, 155, 58, 0.16));
 
             a {
-                padding: 0.35rem 0.6rem;
+                width: 2.6rem;
+                height: 2.6rem;
                 border-radius: 999px;
                 border: 1px solid rgba(20, 22, 28, 0.12);
-                font-size: 0.75rem;
-                font-weight: 600;
-                color: var(--charcoal);
+                display: grid;
+                place-items: center;
+                color: var(--sea);
+                background: rgba(255, 255, 255, 0.9);
+                position: relative;
+                overflow: hidden;
+                box-shadow: 0 8px 18px rgba(20, 22, 28, 0.12);
+                transition: transform 0.3s, color 0.3s, border 0.3s, box-shadow 0.3s, background 0.3s;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    inset: -20%;
+                    background: radial-gradient(circle at 30% 30%, rgba(197, 155, 58, 0.35), transparent 60%);
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                }
+
+                svg {
+                    width: 1.15rem;
+                    height: 1.15rem;
+                    fill: currentColor;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                &:hover {
+                    transform: translateY(-2px);
+                    color: #1a1408;
+                    border-color: rgba(197, 155, 58, 0.55);
+                    background: linear-gradient(145deg, rgba(197, 155, 58, 0.9), rgba(47, 107, 60, 0.2));
+                    box-shadow: 0 12px 24px rgba(20, 22, 28, 0.18);
+                }
+
+                &:hover::after {
+                    opacity: 1;
+                }
+
+                &:focus-visible {
+                    outline: 2px solid rgba(197, 155, 58, 0.7);
+                    outline-offset: 3px;
+                }
             }
         }
 
@@ -923,6 +1004,7 @@ input {
 
         &.primary {
             background: linear-gradient(135deg, #c59b3a, #b0852e);
+            width: fit-content;
             color: #1a1408;
             box-shadow: 0 12px 30px rgba(197, 155, 58, 0.35);
         }
@@ -935,6 +1017,8 @@ input {
 
         &:hover {
             transform: translateY(-2px);
+            background-color: rgba(197, 155, 58, 0.9);
+            color: #ffffff;
         }
     }
 
@@ -971,6 +1055,8 @@ input {
         }
 
         .video-testimonials {
+            padding: 2rem;
+
             .video-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
@@ -1104,6 +1190,8 @@ input {
         }
 
         .video-testimonials {
+            padding: 1.5rem;
+
             .video-grid {
                 grid-template-columns: 1fr;
             }
