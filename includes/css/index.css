@@ -1,0 +1,1125 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --ink: #14161c;
+    --charcoal: #2c2f3a;
+    --slate: #3b3f4e;
+    --fog: #f2f4f7;
+    --cream: #fbf7ef;
+    --gold: #c59b3a;
+    --leaf: #2f6b3c;
+    --sea: #1b3a4b;
+    --shadow: 0 18px 45px rgba(20, 22, 28, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Manrope", sans-serif;
+    background: radial-gradient(circle at top, rgba(197, 155, 58, 0.18), transparent 45%),
+        radial-gradient(circle at 20% 20%, rgba(47, 107, 60, 0.12), transparent 45%),
+        linear-gradient(180deg, #f8f6f1 0%, #eef1f5 100%);
+    color: var(--ink);
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+    color: inherit;
+}
+
+.myWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+
+    .myHighlight {
+        text-align: center;
+        font-weight: 600;
+        padding: 0.75rem 1rem;
+        background: #101218;
+        color: #f6f4ef;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+    }
+
+    .myMarquee {
+        overflow: hidden;
+        width: 100%;
+        background: #0f1117;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+        .myMarquee__track {
+            display: flex;
+            width: max-content;
+            flex-direction: row;
+            gap: 2rem;
+            animation: marqueeScroll 50s linear infinite;
+        }
+
+        .myMarquee__content {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            padding: 0.6rem 0;
+
+            span {
+                display: inline-flex;
+                align-items: center;
+                font-size: 0.8rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                white-space: nowrap;
+                color: rgba(255, 255, 255, 0.75);
+                letter-spacing: 0.08em;
+            }
+        }
+    }
+
+    .header-PC {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        padding: 2.5rem 4vw;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(20, 22, 28, 0.08);
+
+        .headerSide {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .headerLeft {
+            justify-content: flex-start;
+        }
+
+        .headerRight {
+            justify-content: flex-end;
+        }
+
+        .myLogo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+
+            li a {
+                text-decoration: none;
+                color: var(--slate);
+                font-weight: 500;
+                transition: color 0.3s;
+                font-size: 0.95rem;
+
+                &:hover {
+                    color: var(--gold);
+                }
+            }
+        }
+
+        .myLogo a img {
+            width: clamp(4rem, 6vw, 5.5rem);
+            filter: drop-shadow(0 10px 18px rgba(20, 22, 28, 0.2));
+        }
+
+        .myIcons {
+            display: flex;
+            gap: 1rem;
+
+            .iconButton {
+                position: relative;
+                background: transparent;
+                border: 1px solid rgba(20, 22, 28, 0.12);
+                width: 2.75rem;
+                height: 2.75rem;
+                border-radius: 999px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: border 0.3s, color 0.3s, transform 0.3s;
+
+                svg {
+                    width: 1.2rem;
+                    height: 1.2rem;
+                    fill: currentColor;
+                }
+
+                &:hover {
+                    border-color: var(--gold);
+                    color: var(--gold);
+                    transform: translateY(-1px);
+                }
+            }
+
+            .cartBadge {
+                position: absolute;
+                top: 0.3rem;
+                right: 0.3rem;
+                background: var(--leaf);
+                color: #fff;
+                font-size: 0.65rem;
+                padding: 0.1rem 0.35rem;
+                border-radius: 999px;
+                border: 1px solid rgba(20, 22, 28, 0.1);
+            }
+        }
+    }
+
+    .header-phone {
+        display: none;
+    }
+
+    main {
+        width: min(1200px, 90vw);
+        margin: 0 auto;
+        padding: 4rem 0 5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 4.5rem;
+    }
+
+    .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 2rem;
+
+        h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(2rem, 3vw, 2.6rem);
+            color: var(--ink);
+        }
+
+        p {
+            color: rgba(20, 22, 28, 0.65);
+            max-width: 26rem;
+            line-height: 1.5;
+        }
+    }
+
+    .eyebrow {
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        color: rgba(20, 22, 28, 0.6);
+    }
+
+    .hero-subtitle {
+        color: rgba(20, 22, 28, 0.7);
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 32rem;
+    }
+
+    .hero {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 3rem;
+        align-items: center;
+
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            h1 {
+                font-family: "Cormorant Garamond", serif;
+                font-size: clamp(2.6rem, 3.8vw, 4.4rem);
+                color: var(--ink);
+                line-height: 1.05;
+            }
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .review-card {
+            background: #fff;
+            border: 1px solid rgba(20, 22, 28, 0.08);
+            border-radius: 1rem;
+            padding: 1.2rem 1.5rem;
+            box-shadow: var(--shadow);
+            display: grid;
+            gap: 0.8rem;
+            max-width: 24rem;
+
+            p {
+                color: rgba(20, 22, 28, 0.75);
+                line-height: 1.5;
+                font-size: 0.95rem;
+            }
+        }
+
+        .review-stars {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .hero-media {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image {
+            background: radial-gradient(circle at top, rgba(197, 155, 58, 0.2), transparent 55%),
+                linear-gradient(130deg, rgba(47, 107, 60, 0.18), rgba(250, 249, 247, 0.95)),
+                url(../../assets/Images/hero-img.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            min-height: 20rem;
+            width: 100%;
+            border: 1px solid rgba(20, 22, 28, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 2rem;
+            box-shadow: var(--shadow);
+
+            .hero-tag {
+                display: inline-flex;
+                padding: 0.5rem 0.8rem;
+                border-radius: 999px;
+                background: rgba(255, 233, 182, 0.85);
+                color: rgb(0, 0, 0);
+                font-size: 0.75rem;
+                text-transform: uppercase;
+                letter-spacing: 0.2em;
+                width: fit-content;
+            }
+
+            .hero-image-text {
+                background: rgba(255, 255, 255, 0.85);
+                padding: 1rem 1.5rem;
+                border-radius: 1rem;
+                max-width: fit-content;
+            }
+
+            h2 {
+                font-family: "Cormorant Garamond", serif;
+                font-size: 1.8rem;
+                color: var(--ink);
+            }
+        }
+    }
+
+    .products {
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border: 1px solid rgba(20, 22, 28, 0.08);
+            border-radius: 1.2rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 20rem;
+            transition: transform 0.3s, border 0.3s;
+
+            &:hover {
+                transform: translateY(-4px);
+                border-color: rgba(197, 155, 58, 0.35);
+            }
+        }
+
+        .product-media {
+            background: linear-gradient(160deg, rgba(47, 107, 60, 0.25), rgba(250, 249, 247, 0.95)), url(../../assets/Images/prod.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(20, 22, 28, 0.5);
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+
+        }
+
+        .product-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+
+            h3 {
+                font-size: 1.2rem;
+                color: var(--ink);
+            }
+
+            p {
+                color: rgba(20, 22, 28, 0.65);
+                line-height: 1.5;
+                font-size: 0.95rem;
+            }
+
+            span {
+                color: rgba(20, 22, 28, 0.5);
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+            }
+        }
+
+        .product-meta {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+            color: var(--gold);
+        }
+    }
+
+    .video-testimonials {
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .video-card {
+            position: relative;
+            background: #ffffff;
+            border-radius: 1.2rem;
+            overflow: hidden;
+            border: 1px solid rgba(20, 22, 28, 0.08);
+            box-shadow: var(--shadow);
+
+            .video-thumb {
+                position: absolute;
+                inset: 0;
+                background-size: cover;
+                background-position: center;
+                filter: saturate(0.9);
+                transition: opacity 0.35s ease;
+            }
+
+            .video-play {
+                position: absolute;
+                inset: 0;
+                display: grid;
+                place-items: center;
+                font-weight: 600;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                color: #fff;
+                text-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.35));
+                transition: opacity 0.35s ease;
+            }
+
+            iframe {
+                width: 100%;
+                height: 100%;
+                aspect-ratio: 16 / 9;
+                border: 0;
+                position: relative;
+                z-index: 1;
+                opacity: 0;
+                transition: opacity 0.35s ease;
+            }
+
+            &.is-loaded {
+                iframe {
+                    opacity: 1;
+                }
+
+                .video-thumb,
+                .video-play {
+                    opacity: 0;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+
+    .why-buy {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2.5rem;
+        align-items: center;
+
+        .why-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            h2 {
+                font-family: "Cormorant Garamond", serif;
+                font-size: 2.3rem;
+            }
+        }
+
+        .checklist {
+            list-style: none;
+            display: grid;
+            gap: 0.9rem;
+
+            li {
+                padding-left: 2rem;
+                position: relative;
+                color: rgba(20, 22, 28, 0.7);
+
+                &::before {
+                    content: "✓";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    color: var(--leaf);
+                    font-weight: 700;
+                }
+            }
+        }
+
+        .why-image {
+            .image-card {
+                background: linear-gradient(140deg, rgba(27, 58, 75, 0.2), rgba(250, 249, 247, 0.95)), url(../../assets/Images/why-buy.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                border-radius: 1.5rem;
+                min-height: 18rem;
+                border: 1px solid rgba(20, 22, 28, 0.08);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: rgba(20, 22, 28, 0.55);
+                text-transform: uppercase;
+                letter-spacing: 0.12em;
+            }
+        }
+    }
+
+    .customer-say {
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: #ffffff;
+            border: 1px solid rgba(20, 22, 28, 0.08);
+            border-radius: 1.2rem;
+            padding: 1.5rem;
+            display: grid;
+            gap: 1rem;
+            box-shadow: var(--shadow);
+
+            p {
+                color: rgba(20, 22, 28, 0.7);
+                line-height: 1.5;
+            }
+
+            span {
+                font-weight: 600;
+                color: var(--charcoal);
+            }
+        }
+    }
+
+    .recipes {
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .recipe-card {
+            background: #ffffff;
+            border: 1px solid rgba(20, 22, 28, 0.08);
+            border-radius: 1.2rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 20rem;
+            transition: transform 0.3s, border 0.3s;
+
+            &:hover {
+                transform: translateY(-4px);
+                border-color: rgba(197, 155, 58, 0.35);
+            }
+        }
+
+        .recipe-media {
+            background: linear-gradient(160deg, rgba(47, 107, 60, 0.25), rgba(250, 249, 247, 0.95)), url(../../assets/Images/prod.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(20, 22, 28, 0.5);
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .recipe-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+
+            h3 {
+                font-size: 1.2rem;
+                color: var(--ink);
+            }
+
+            p {
+                color: rgba(20, 22, 28, 0.65);
+                line-height: 1.5;
+                font-size: 0.95rem;
+            }
+
+            span {
+                color: rgba(20, 22, 28, 0.5);
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+            }
+        }
+    }
+
+    .newsletter {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+        align-items: center;
+        background: linear-gradient(140deg, rgba(197, 155, 58, 0.16), rgba(47, 107, 60, 0.12));
+        border-radius: 1.6rem;
+        padding: 2.5rem;
+        border: 1px solid rgba(20, 22, 28, 0.12);
+
+        h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2rem;
+            color: var(--ink);
+        }
+
+        p {
+            color: rgba(20, 22, 28, 0.7);
+            line-height: 1.6;
+            margin-top: 0.4rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+
+            input {
+                flex: 1;
+                min-width: 12rem;
+                background: rgba(255, 255, 255, 0.9);
+                border: 1px solid rgba(20, 22, 28, 0.12);
+                padding: 0.8rem 1rem;
+                border-radius: 999px;
+            }
+        }
+    }
+
+    .footer {
+        margin-top: auto;
+        padding: 3rem 5vw 2.5rem;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 2rem;
+        border-top: 1px solid rgba(20, 22, 28, 0.08);
+        background: #ffffff;
+
+        p {
+            color: rgba(20, 22, 28, 0.6);
+            margin-top: 0.6rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .footer-logo {
+            width: 4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            color: rgba(20, 22, 28, 0.7);
+
+            h4 {
+                color: var(--ink);
+            }
+        }
+
+        .footer-signup {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .footer-form {
+                display: flex;
+                gap: 1rem;
+                flex-wrap: wrap;
+
+                input {
+                    flex: 1;
+                    min-width: 12rem;
+                    background: rgba(255, 255, 255, 0.9);
+                    border: 1px solid rgba(20, 22, 28, 0.12);
+                    padding: 0.8rem 1rem;
+                    border-radius: 999px;
+                }
+            }
+        }
+
+        .socials {
+            display: flex;
+            gap: 0.75rem;
+
+            a {
+                padding: 0.35rem 0.6rem;
+                border-radius: 999px;
+                border: 1px solid rgba(20, 22, 28, 0.12);
+                font-size: 0.75rem;
+                font-weight: 600;
+                color: var(--charcoal);
+            }
+        }
+
+        .footer-note {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            color: rgba(20, 22, 28, 0.5);
+            font-size: 0.85rem;
+            grid-column: 1 / -1;
+            border-top: 1px solid rgba(20, 22, 28, 0.08);
+            padding-top: 1.5rem;
+        }
+    }
+
+    .page-hero {
+        background: #ffffff;
+        border-radius: 1.5rem;
+        padding: 2.5rem;
+        border: 1px solid rgba(20, 22, 28, 0.08);
+        box-shadow: var(--shadow);
+
+        h1 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(2.4rem, 4vw, 3.2rem);
+        }
+    }
+
+    .faq {
+        .faq-list {
+            display: grid;
+            gap: 1rem;
+
+            details {
+                background: #ffffff;
+                border: 1px solid rgba(20, 22, 28, 0.08);
+                border-radius: 1rem;
+                padding: 1.2rem 1.5rem;
+            }
+
+            summary {
+                font-weight: 600;
+                cursor: pointer;
+            }
+
+            p {
+                margin-top: 0.8rem;
+                color: rgba(20, 22, 28, 0.7);
+            }
+        }
+    }
+
+    .blog-list {
+        display: grid;
+        gap: 1.5rem;
+
+        .blog-card {
+            background: #ffffff;
+            border: 1px solid rgba(20, 22, 28, 0.08);
+            border-radius: 1.2rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, border 0.3s;
+            min-height: unset;
+
+            &:hover {
+                transform: translateY(-4px);
+                border-color: rgba(197, 155, 58, 0.35);
+            }
+        }
+
+        .blog-media {
+            background: linear-gradient(160deg, rgba(47, 107, 60, 0.25), rgba(250, 249, 247, 0.95));
+            height: 9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(20, 22, 28, 0.5);
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .blog-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+
+            h3 {
+                font-size: 1.2rem;
+                color: var(--ink);
+            }
+
+            p {
+                color: rgba(20, 22, 28, 0.65);
+                line-height: 1.5;
+                font-size: 0.95rem;
+            }
+
+            span {
+                color: rgba(20, 22, 28, 0.5);
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+            }
+
+            a {
+                color: var(--gold);
+                font-weight: 600;
+            }
+        }
+    }
+
+    .related-posts {
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .recipe-card {
+            background: #ffffff;
+            border: 1px solid rgba(20, 22, 28, 0.08);
+            border-radius: 1.2rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 20rem;
+            transition: transform 0.3s, border 0.3s;
+
+            &:hover {
+                transform: translateY(-4px);
+                border-color: rgba(197, 155, 58, 0.35);
+            }
+        }
+
+        .recipe-media {
+            background: linear-gradient(160deg, rgba(47, 107, 60, 0.25), rgba(250, 249, 247, 0.95));
+            height: 9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(20, 22, 28, 0.5);
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .recipe-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+
+            h3 {
+                font-size: 1.2rem;
+                color: var(--ink);
+            }
+
+            p {
+                color: rgba(20, 22, 28, 0.65);
+                line-height: 1.5;
+                font-size: 0.95rem;
+            }
+
+            span {
+                color: rgba(20, 22, 28, 0.5);
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+            }
+        }
+    }
+
+    .button {
+        border-radius: 999px;
+        padding: 0.75rem 1.5rem;
+        border: 1px solid transparent;
+        cursor: pointer;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+
+        &.primary {
+            background: linear-gradient(135deg, #c59b3a, #b0852e);
+            color: #1a1408;
+            box-shadow: 0 12px 30px rgba(197, 155, 58, 0.35);
+        }
+
+        &.ghost {
+            background: transparent;
+            border-color: rgba(20, 22, 28, 0.2);
+            color: var(--ink);
+        }
+
+        &:hover {
+            transform: translateY(-2px);
+        }
+    }
+
+    .myDrawer {
+        display: none;
+    }
+}
+
+@keyframes marqueeScroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 1024px) {
+    .myWrapper {
+        main {
+            width: min(1100px, 92vw);
+        }
+
+        .hero,
+        .why-buy {
+            grid-template-columns: 1fr;
+        }
+
+        .products {
+            .product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        .video-testimonials {
+            .video-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        .customer-say {
+            .testimonial-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        .recipes,
+        .related-posts {
+            .recipe-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        .newsletter,
+        .footer {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .myWrapper {
+        .header-PC {
+            display: none;
+        }
+
+        .header-phone {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.1rem 6vw;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid rgba(20, 22, 28, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+
+            .myLogo a img {
+                width: clamp(4rem, 20vw, 5rem);
+            }
+
+            .menuButton {
+                background-color: transparent;
+                border: 1px solid rgba(20, 22, 28, 0.12);
+                width: 2.6rem;
+                height: 2.6rem;
+                border-radius: 999px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+
+                svg {
+                    width: 1.2rem;
+                    height: 1.2rem;
+                    fill: currentColor;
+                }
+            }
+        }
+
+        .myDrawer {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            inset: 0 0 0 auto;
+            width: min(20rem, 85vw);
+            height: 100vh;
+            background: #ffffff;
+            border-left: 1px solid rgba(20, 22, 28, 0.08);
+            padding: 1.5rem;
+            transform: translateX(110%);
+            transition: transform 0.3s ease;
+            z-index: 20;
+
+            &.open {
+                transform: translateX(0);
+            }
+
+            .drawer-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-bottom: 1.5rem;
+
+                .logo a img {
+                    width: clamp(4rem, 30vw, 5rem);
+                }
+            }
+
+            .closeButton {
+                background: transparent;
+                border: 1px solid rgba(20, 22, 28, 0.12);
+                width: 2.4rem;
+                height: 2.4rem;
+                border-radius: 999px;
+                text-transform: uppercase;
+                cursor: pointer;
+            }
+
+            .drawer-nav {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                font-size: 1rem;
+                color: rgba(20, 22, 28, 0.8);
+            }
+
+            .drawer-cta {
+                margin-top: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+        }
+
+        main {
+            width: min(1100px, 88vw);
+            padding-top: 3rem;
+        }
+
+        .products {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .video-testimonials {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .customer-say {
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .recipes,
+        .related-posts {
+            .recipe-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
