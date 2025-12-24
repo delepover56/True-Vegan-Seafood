@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Ture Vegan Seafood</title>
+    <link rel="stylesheet" href="./includes/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <style>
+        .products-slider {
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        .products-slider .swiper {
+            padding: 0.5rem 0 3rem;
+        }
+
+        .products-slider .swiper-slide {
+            height: auto;
+        }
+
+        .products-slider .swiper-button-next,
+        .products-slider .swiper-button-prev {
+            color: var(--gold);
+            background: #ffffff;
+            border: 1px solid rgba(20, 22, 28, 0.12);
+            width: 2.8rem;
+            height: 2.8rem;
+            border-radius: 999px;
+            box-shadow: var(--shadow);
+        }
+
+        .products-slider .swiper-button-next::after,
+        .products-slider .swiper-button-prev::after {
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .products-slider .swiper-pagination-bullet {
+            background: rgba(20, 22, 28, 0.25);
+            opacity: 1;
+        }
+
+        .products-slider .swiper-pagination-bullet-active {
+            background: var(--gold);
+        }
+
+        @media (max-width: 767px) {
+            .products-slider .swiper-button-next,
+            .products-slider .swiper-button-prev {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="myWrapper">
+        <div class="myHighlight">
+            Get 10% Off Your First Order. Use Coupon Code: SAVE
+        </div>
+
+        <div class="myMarquee" aria-hidden="true">
+            <div class="myMarquee__track">
+                <div class="myMarquee__content">
+                    <span>Free Shipping On Orders Over $100</span>
+                    <span>|</span>
+                    <span>Safe &amp; Secure Checkout</span>
+                    <span>|</span>
+                    <span>500 Happy Customers</span>
+                    <span>|</span>
+                </div>
+                <div class="myMarquee__content">
+                    <span>Free Shipping On Orders Over $100</span>
+                    <span>|</span>
+                    <span>Safe &amp; Secure Checkout</span>
+                    <span>|</span>
+                    <span>500 Happy Customers</span>
+                    <span>|</span>
+                </div>
+                <div class="myMarquee__content">
+                    <span>Free Shipping On Orders Over $100</span>
+                    <span>|</span>
+                    <span>Safe &amp; Secure Checkout</span>
+                    <span>|</span>
+                    <span>500 Happy Customers</span>
+                    <span>|</span>
+                </div>
+            </div>
+        </div>
+
+        <header class="header-PC">
+            <div class="headerSide headerLeft">
+                <nav aria-label="Primary">
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="./products.html">Shop</a></li>
+                        <li><a href="index.html#recipes">Recipes</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="myLogo">
+                <a href="index.html">
+                    <img src="./assets/logo.png" alt="Ture Vegan Seafood">
+                </a>
+            </div>
+
+            <div class="headerSide headerRight">
+                <div class="myIcons">
+                    <button class="iconButton" aria-label="Account">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z" />
+                        </svg>
+                    </button>
+                    <button class="iconButton" aria-label="Cart">
+                        <span class="cartBadge">2</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M21 9h-1.42l-3.712-6.496-1.736.992L17.277 9H6.723l3.146-5.504-1.737-.992L4.42 9H3a1.001 1.001 0 0 0-.965 1.263l2.799 10.264A2.005 2.005 0 0 0 6.764 22h10.473c.898 0 1.692-.605 1.93-1.475l2.799-10.263A.998.998 0 0 0 21 9zm-3.764 11H6.764L4.31 11h15.38l-2.454 9z" />
+                            <path d="M9 13h2v5H9zm4 0h2v5h-2z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <header class="header-phone">
+            <div class="myLogo">
+                <a href="index.html">
+                    <img src="./assets/logo.png" alt="Ture Vegan Seafood">
+                </a>
+            </div>
+
+            <button onclick="openMenu()" class="menuButton" aria-label="Open Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+                </svg>
+            </button>
+        </header>
+
+        <aside class="myDrawer" aria-hidden="true">
+            <div class="drawer-header">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="./assets/logo.png" alt="Ture Vegan Seafood">
+                    </a>
+                </div>
+
+                <button onclick="closeMenu()" class="closeButton" aria-label="Close Menu">
+                    x
+                </button>
+            </div>
+            <nav class="drawer-nav" aria-label="Mobile">
+                <a href="./index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="./products.html">Shop</a>
+                <a href="index.html#recipes">Recipes</a>
+                <a href="faq.html">FAQ</a>
+                <a href="blog.html">Blog</a>
+            </nav>
+            <div class="drawer-cta">
+                <button class="button primary">Shop now</button>
+                <button class="button ghost">Track order</button>
+            </div>
+        </aside>
+
+        <main>
+            <section class="page-hero">
+                <p class="eyebrow">Vegan seafood line</p>
+                <h1>Explore our coastal-inspired collection</h1>
+                <p>
+                    From sushi-ready sticks to golden cakes, every product is crafted for texture,
+                    bright flavor, and plant-based comfort.
+                </p>
+            </section>
+
+            <section class="products" id="products">
+                <div class="section-head">
+                    <h2>Shop the collection</h2>
+                    <p>Swipe through our favorites and add your next staple to the cart.</p>
+                </div>
+
+                <div class="products-slider">
+                    <div class="swiper products-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <article class="product-card">
+                                    <div class="product-media">
+                                        <img src="./assets/Images/prod.jpeg" alt="Vegan Crab Sticks" style="visibility: hidden;">
+                                    </div>
+                                    <div class="product-body">
+                                        <h3>Vegan Crab Sticks</h3>
+                                        <p>Sweet, flaky, and ready for sushi rolls.</p>
+                                        <div class="product-meta">
+                                            <span>$18</span>
+                                            <button class="button ghost">Add to cart</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="product-card">
+                                    <div class="product-media">
+                                        <img src="./assets/Images/prod.jpeg" alt="Classic Crab Cakes" style="visibility: hidden;">
+                                    </div>
+                                    <div class="product-body">
+                                        <h3>Classic Crab Cakes</h3>
+                                        <p>Golden crust with a coastal herb finish.</p>
+                                        <div class="product-meta">
+                                            <span>$22</span>
+                                            <button class="button ghost">Add to cart</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="product-card">
+                                    <div class="product-media">
+                                        <img src="./assets/Images/prod.jpeg" alt="Citrus Miso Filets" style="visibility: hidden;">
+                                    </div>
+                                    <div class="product-body">
+                                        <h3>Citrus Miso Filets</h3>
+                                        <p>Bright glaze with a clean, savory bite.</p>
+                                        <div class="product-meta">
+                                            <span>$20</span>
+                                            <button class="button ghost">Add to cart</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="product-card">
+                                    <div class="product-media">
+                                        <img src="./assets/Images/prod.jpeg" alt="Lemon Pepper Shrimp" style="visibility: hidden;">
+                                    </div>
+                                    <div class="product-body">
+                                        <h3>Lemon Pepper Shrimp</h3>
+                                        <p>Butter-bright flavor with a snap of pepper.</p>
+                                        <div class="product-meta">
+                                            <span>$19</span>
+                                            <button class="button ghost">Add to cart</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="product-card">
+                                    <div class="product-media">
+                                        <img src="./assets/Images/prod.jpeg" alt="Smoky Surf Bites" style="visibility: hidden;">
+                                    </div>
+                                    <div class="product-body">
+                                        <h3>Smoky Surf Bites</h3>
+                                        <p>Snackable bites with a toasted paprika kick.</p>
+                                        <div class="product-meta">
+                                            <span>$16</span>
+                                            <button class="button ghost">Add to cart</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="product-card">
+                                    <div class="product-media">
+                                        <img src="./assets/Images/prod.jpeg" alt="Herb Butter Scallops" style="visibility: hidden;">
+                                    </div>
+                                    <div class="product-body">
+                                        <h3>Herb Butter Scallops</h3>
+                                        <p>Pan-sear ready with rosemary and thyme.</p>
+                                        <div class="product-meta">
+                                            <span>$24</span>
+                                            <button class="button ghost">Add to cart</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="product-card">
+                                    <div class="product-media">
+                                        <img src="./assets/Images/prod.jpeg" alt="Coastal Chowder Kit" style="visibility: hidden;">
+                                    </div>
+                                    <div class="product-body">
+                                        <h3>Coastal Chowder Kit</h3>
+                                        <p>Comforting blend for quick weeknight bowls.</p>
+                                        <div class="product-meta">
+                                            <span>$28</span>
+                                            <button class="button ghost">Add to cart</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="product-card">
+                                    <div class="product-media">
+                                        <img src="./assets/Images/prod.jpeg" alt="Garlic Dill Filets" style="visibility: hidden;">
+                                    </div>
+                                    <div class="product-body">
+                                        <h3>Garlic Dill Filets</h3>
+                                        <p>Fresh dill, mellow garlic, and a tender bite.</p>
+                                        <div class="product-meta">
+                                            <span>$21</span>
+                                            <button class="button ghost">Add to cart</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination products-pagination"></div>
+                    </div>
+                    <div class="swiper-button-prev products-prev" aria-label="Previous slide"></div>
+                    <div class="swiper-button-next products-next" aria-label="Next slide"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-brand">
+                <img src="./assets/logo.png" alt="Ture Vegan Seafood" class="footer-logo">
+                <p>Plant-based seafood with a coastal soul.</p>
+                <div class="socials">
+                    <a href="#" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z">
+                            </path>
+                            <circle cx="16.806" cy="7.207" r="1.078"></circle>
+                            <path
+                                d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="TikTok">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Shop</h4>
+                <a href="index.html">Home</a>
+                <a href="./products.html">Shop</a>
+                <a href="about.html">About</a>
+                <a href="index.html#recipes">Recipes</a>
+                <a href="faq.html">FAQ</a>
+                <a href="blog.html">Blog</a>
+            </div>
+            <div class="footer-links">
+                <h4>Policies</h4>
+                <a href="#">Refund Policy</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-signup">
+                <h4>Sign up for best offers</h4>
+                <form class="footer-form">
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                    <button class="button primary" type="submit">Join</button>
+                </form>
+            </div>
+            <div class="footer-note">
+                <span>2025 Ture Vegan Seafood.</span>
+                <span>All rights reserved.</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script>
+        const drawer = document.querySelector('.myDrawer');
+
+        function openMenu() {
+            drawer.classList.add('open');
+            drawer.setAttribute('aria-hidden', 'false');
+        }
+
+        function closeMenu() {
+            drawer.classList.remove('open');
+            drawer.setAttribute('aria-hidden', 'true');
+        }
+
+        new Swiper('.products-swiper', {
+            loop: true,
+            slidesPerView: 1.1,
+            spaceBetween: 16,
+            pagination: {
+                el: '.products-pagination',
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.products-next',
+                prevEl: '.products-prev'
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 24
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
+
