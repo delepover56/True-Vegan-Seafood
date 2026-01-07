@@ -1255,7 +1255,7 @@ input {
                 z-index: 1;
 
                 .logo a img {
-                    width: clamp(5rem, 38vw, 7rem);
+                    width: clamp(10rem, 38vw, 12rem);
                 }
             }
 
