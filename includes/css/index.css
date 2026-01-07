@@ -758,7 +758,7 @@ input {
         }
 
         .footer-logo {
-            width: clamp(7.5rem, 12vw, 10rem);
+            width: clamp(12rem, 18vw, 13rem);
         }
 
         .footer-links {
