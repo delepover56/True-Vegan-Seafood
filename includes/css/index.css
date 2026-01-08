@@ -366,7 +366,7 @@ input {
 
     .products {
         padding: clamp(2rem, 4vw, 2.5rem);
-        background: var(--seafoam);
+        background: var(--mist);
 
         .product-grid {
             display: grid;
@@ -538,7 +538,7 @@ input {
     }
 
     .why-buy {
-        background: var(--seafoam);
+        background: var(--mist);
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 2rem;
@@ -636,7 +636,7 @@ input {
     }
 
     .recipes {
-        background: var(--seafoam);
+        background: var(--mist);
         padding: clamp(2rem, 4vw, 2.5rem);
 
         .recipe-grid {
@@ -724,6 +724,7 @@ input {
         .newsletter-form {
             display: flex;
             gap: 1rem;
+            margin-top: 1.5rem;
             flex-wrap: wrap;
 
             input {
