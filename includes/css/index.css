@@ -537,43 +537,69 @@ input {
             }
         }
     }
-
     .why-buy {
         background: var(--mist);
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 2rem;
+        gap: 2.5rem;
         align-items: center;
+        text-align: center;
 
-        .why-content {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-
-            h2 {
-                font-family: "Cormorant Garamond", serif;
-                font-size: 2.3rem;
-            }
+        h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2.3rem;
         }
 
-        .checklist {
-            list-style: none;
+        .why-layout {
             display: grid;
-            gap: 0.9rem;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr) minmax(0, 1fr);
+            gap: 2.5rem;
+            align-items: center;
+        }
 
-            li {
-                padding-left: 2rem;
-                position: relative;
-                color: rgba(20, 22, 28, 0.7);
+        .why-features {
+            display: grid;
+            gap: 1.5rem;
+            text-align: left;
+        }
 
-                &::before {
-                    content: "✓";
-                    position: absolute;
-                    left: 0px;
-                    top: 0px;
-                    color: var(--leaf);
-                    font-weight: 700;
-                }
+        .why-feature {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1.1rem 1.2rem;
+            border-radius: 1.2rem;
+            background: rgba(255, 255, 255, 0.75);
+            border: 1px solid rgba(20, 22, 28, 0.08);
+            box-shadow: 0 10px 24px rgba(20, 22, 28, 0.08);
+        }
+
+        .feature-icon {
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(197, 155, 58, 0.2);
+            color: var(--leaf);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            display: grid;
+            gap: 0.35rem;
+
+            h3 {
+                font-size: 1rem;
+                font-weight: 600;
+                color: var(--charcoal);
+            }
+
+            p {
+                color: rgba(20, 22, 28, 0.65);
+                font-size: 0.95rem;
+                line-height: 1.5;
             }
         }
 
@@ -582,25 +608,34 @@ input {
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding-top: 3rem;
+        }
 
-            .image-card {
+        .image-card {
+            width: min(22rem, 70vw);
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 1px solid rgba(20, 22, 28, 0.08);
+            background: linear-gradient(140deg, rgba(27, 58, 75, 0.2), rgba(250, 249, 247, 0.521)), url(../../assets/Images/why-buy.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
                 width: 100%;
-                max-width: 30rem;
-                background: linear-gradient(140deg, rgba(27, 58, 75, 0.2), rgba(250, 249, 247, 0.521)), url(../../assets/Images/why-buy.jpg);
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-                border-radius: 1.5rem;
-                min-height: 18rem;
-                border: 1px solid rgba(20, 22, 28, 0.08);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: rgba(20, 22, 28, 0.55);
-                text-transform: uppercase;
-                letter-spacing: 0.12em;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                opacity: 0;
             }
+        }
+
+        .why-cta {
+            display: flex;
+            justify-content: center;
         }
     }
 
@@ -1120,9 +1155,27 @@ input {
             width: min(1100px, 92vw);
         }
 
-        .hero,
-        .why-buy {
+        .hero {
             grid-template-columns: 1fr;
+        }
+
+        .why-buy {
+            .why-layout {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-template-areas: "image image" "left right";
+            }
+
+            .why-layout>.why-image {
+                grid-area: image;
+            }
+
+            .why-layout>.why-features:first-child {
+                grid-area: left;
+            }
+
+            .why-layout>.why-features:last-child {
+                grid-area: right;
+            }
         }
 
         .products {
@@ -1384,6 +1437,31 @@ input {
         .related-posts {
             .recipe-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+    }
+
+    .myWrapper {
+        .why-buy {
+            .why-layout {
+                grid-template-columns: 1fr;
+                grid-template-areas: "image" "left" "right";
+            }
+
+            .why-layout>.why-image {
+                grid-area: image;
+            }
+
+            .why-layout>.why-features {
+                grid-template-columns: 1fr;
+            }
+
+            .why-layout>.why-features:first-child {
+                grid-area: left;
+            }
+
+            .why-layout>.why-features:last-child {
+                grid-area: right;
             }
         }
     }
