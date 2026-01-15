@@ -1410,7 +1410,7 @@ input {
 
         main {
             width: min(1100px, 88vw);
-            padding-top: 3rem;
+            padding-top: 0;
         }
 
         .products {
@@ -1469,7 +1469,7 @@ input {
     .home-page .myWrapper main {
         width: 100%;
         margin: 0;
-        padding: 3rem 0 4rem;
+        padding: 0;
         gap: 0;
     }
 }
